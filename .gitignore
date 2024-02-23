@@ -1,6 +1,9 @@
 # Compiled class file
 *.class
-
+build/
+target/
+.gradle
+.vscode
 # Log file
 *.log
 
