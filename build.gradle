@@ -44,6 +44,8 @@ dependencies {
 }
 test{
     testLogging.showStandardStreams = true
+    systemProperty "user", System.properties.getProperty("user")
+    systemProperty "password", System.properties.getProperty("password")
 }
  
 tasks.withType(JavaCompile) {

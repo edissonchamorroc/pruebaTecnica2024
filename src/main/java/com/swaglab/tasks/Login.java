@@ -5,6 +5,8 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.SendKeys;
+import net.thucydides.core.environment.SystemEnvironmentVariables;
+
 import com.swaglab.userinterfaces.LoginUserinterface;
 
 public class Login implements Task {
@@ -19,6 +21,7 @@ public class Login implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+    
         actor.attemptsTo(
             SendKeys.of(System.getProperty(this.user)).into(LoginUserinterface.INP_USER),
             SendKeys.of(System.getProperty(this.password)).into(LoginUserinterface.INP_PASSWORD),
@@ -26,7 +29,7 @@ public class Login implements Task {
         );
     }
 
-    public static Login withCommanLineCredentials(String user, String password){
+    public static Login conCredenciales(String user, String password){
         return Tasks.instrumented(Login.class,user,password);
     }
     
