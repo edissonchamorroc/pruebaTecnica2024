@@ -6,12 +6,20 @@ import io.cucumber.java.es.Entonces;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 import com.swaglab.interactions.Abrir;
+import com.swaglab.tasks.Login;
 public class InteraccionSwaglabSteps {
 
     @Dado("Que ingreso a la pagina de swaglab")
     public void QueIngresoALaPaginaDeSwaglab() {
         theActorInTheSpotlight().attemptsTo(
             Abrir.ulr()
+        );
+    }
+
+    @Dado("realizo login con usuario {string} and contrasena {string}")
+    public void realizoLoginConUsuarioAndContrasena(String user, String password) {
+        theActorInTheSpotlight().attemptsTo(
+            Login.withCommanLineCredentials(user,password)
         );
     }
 

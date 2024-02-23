@@ -7,6 +7,7 @@
 
       Antecedentes: Realizo login en la pagina swaglab
       Dado Que ingreso a la pagina de swaglab
+      Y realizo login con usuario "user" and contrasena "password"
 
 
       @AgregarArticulo
