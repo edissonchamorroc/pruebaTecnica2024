@@ -3,6 +3,7 @@
 build/
 target/
 .gradle
+gradle/**
 .vscode
 # Log file
 *.log
