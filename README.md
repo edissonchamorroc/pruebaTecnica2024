@@ -1,18 +1,18 @@
-#Automatización compra articulos en Página Swaglab#
+# Automatizaciï¿½n compra articulos en Pï¿½gina Swaglab#
 
-#Pre-requisitos
+# Pre-requisitos
 
 - Java 17 (OpenJDK)
 - Gradle 8.1.1
 - Vscode
 - Chrome
 
-# Descripción
+# Descripciï¿½n
 
 En este proyecto automatiza las funcionalidades necesarias
-para interactuar con los articulos que brinda la página Swaglab.
-En esta automatización se verificó la funcionalidad de agregar, remover, de carrito de compra, y comprar artículos.
+para interactuar con los articulos que brinda la pï¿½gina Swaglab.
+En esta automatizaciï¿½n se verificï¿½ la funcionalidad de agregar, remover, de carrito de compra, y comprar artï¿½culos.
 
-# Instalación
+# Instalaciï¿½n
 1. Clona el repositorio
 2. Ejecuta con el comando: gradle clean test --tests "InteraccionSwaglab" -Duser=standard_user -Dpassword=secret_sauce
