@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
     features = "src/test/resources/com/swaglab/features/interaccion_swaglab.feature", 
     snippets = CucumberOptions.SnippetType.CAMELCASE, 
     monochrome = true,
-    tags = "@AgregarArticulo")
+    tags = "@RemoverArticulo")
 
 public class InteraccionSwaglab {
 

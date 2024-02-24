@@ -15,8 +15,8 @@
       Cuando selecciono articulo "<nombre>"
       Entonces valida el nombre articulo "<nombre>" su descripcion "<descripcion>" y su precio "<precio>"
       Ejemplos:
-      | nombre              | descripcion                                                                                                                            | precio |
-      | Sauce Labs Backpack | Sauce Labs Backpack  with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection. | 29.99  |
+      | nombre                | descripcion                                                                                                                                                     | precio |
+      | Sauce Labs Bike Light | A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included. | 9.99   |
 
       @RemoverArticulo
       Esquema del escenario: Validar que se remueva articulo de carrito de compras
@@ -24,8 +24,8 @@
       Y se remueve el articulo "<nombre>"
       Entonces valida el articulo "<nombre>" no se encuentre en el carrito de compras
       Ejemplos:
-      | nombre |
-      | hola   |
+      | nombre                |
+      | Sauce Labs Bike Light |
 
       @ComprarArticulos
       Esquema del escenario: Validar que se realice compra de articulos
@@ -37,5 +37,5 @@
       | <firstName> | <lastName> | <zipCode> |
       Entonces valida el "<mensajeOrdenExitosa>" de orden de compra exitoso
       Ejemplos:
-      | articulo1 | articulo2 | articulo3 | firstName | lastName | zipCode | mensajeOrdenExitosa |
-      | articulo1 | articulo2 | articulo3 | firstName | lastName | zipCode | mensajeOrdenExitosa |
+      | articulo1             | articulo2               | articulo3                | firstName | lastName | zipCode | mensajeOrdenExitosa                                                                     |
+      | Sauce Labs Bike Light | Sauce Labs Bolt T-Shirt | Sauce Labs Fleece Jacket | Edisson   | Chamorro | 050014  | Your order has been dispatched, and will arrive just as fast as the pony can get there! |

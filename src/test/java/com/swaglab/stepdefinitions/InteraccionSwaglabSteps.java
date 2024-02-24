@@ -11,6 +11,8 @@ import static org.hamcrest.Matchers.equalTo;
 import com.swaglab.interactions.Abrir;
 import com.swaglab.interactions.Agregar;
 import com.swaglab.interactions.Ingresar;
+import com.swaglab.interactions.Remover;
+import com.swaglab.questions.EsVisible;
 import com.swaglab.questions.Obtener;
 import com.swaglab.tasks.Login;
 import com.swaglab.userinterfaces.CarritoUserinterface;
@@ -37,8 +39,9 @@ public class InteraccionSwaglabSteps {
     }
 
     @Cuando("se remueve el articulo {string}")
-    public void seRemueveElArticulo(String string) {
-
+    public void seRemueveElArticulo(String nombreArticulo) {
+        theActorInTheSpotlight().attemptsTo(
+                Remover.articulo(nombreArticulo));
     }
 
     @Cuando("se seleccionan los articulos")
@@ -54,18 +57,24 @@ public class InteraccionSwaglabSteps {
     @Entonces("valida el nombre articulo {string} su descripcion {string} y su precio {string}")
     public void validaElNombreArticuloSuDescripcionYSuPrecio(String nombreArticulo, String descripcion, String precio) {
         theActorInTheSpotlight().should(
-                GivenWhenThen.seeThat(Obtener.textoDe(CarritoUserinterface.TXT_NAME_ARTICLE.of(nombreArticulo)), equalTo(nombreArticulo)),
-                GivenWhenThen.seeThat(Obtener.textoDe(CarritoUserinterface.TXT_NAME_ARTICLE.of(descripcion)), equalTo(descripcion)),
-                GivenWhenThen.seeThat(Obtener.textoDe(CarritoUserinterface.TXT_NAME_ARTICLE.of(precio)), equalTo(precio)));
+                GivenWhenThen.seeThat(Obtener.textoDe(CarritoUserinterface.TXT_NAME_ARTICLE.of(nombreArticulo)),
+                        equalTo(nombreArticulo)),
+                GivenWhenThen.seeThat(Obtener.textoDe(CarritoUserinterface.TXT_DESC_ARTICLE.of(descripcion)),
+                        equalTo(descripcion)),
+                GivenWhenThen.seeThat(Obtener.textoDe(CarritoUserinterface.TXT_PRICE_ARTICLE.of(precio)),
+                        equalTo(precio)));
     }
 
     @Entonces("valida el articulo {string} no se encuentre en el carrito de compras")
-    public void validaElArticuloNoSeEncuentreEnElCarritoDeCompras(String string) {
-
+    public void validaElArticuloNoSeEncuentreEnElCarritoDeCompras(String nombreArticulo) {
+        theActorInTheSpotlight().should(
+                GivenWhenThen.seeThat(EsVisible.elCampo(CarritoUserinterface.TXT_NAME_ARTICLE.of(nombreArticulo)),equalTo(false)));
     }
 
     @Entonces("valida el {string} de orden de compra exitoso")
-    public void validaElDeOrdenDeCompraExitoso(String string) {
-
+    public void validaElDeOrdenDeCompraExitoso(String mensaje) {
+        theActorInTheSpotlight().should(
+                GivenWhenThen.seeThat(Obtener.textoDe(CarritoUserinterface.TXT_NAME_ARTICLE.of(mensaje)),
+                        equalTo(mensaje)));
     }
 }
