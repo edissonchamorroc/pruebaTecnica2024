@@ -9,7 +9,8 @@ import org.junit.runner.RunWith;
     glue = {"com.swaglab.stepdefinitions", "com.swaglab.setup"},
     features = "src/test/resources/com/swaglab/features/interaccion_swaglab.feature", 
     snippets = CucumberOptions.SnippetType.CAMELCASE, 
-    monochrome = true)
+    monochrome = true
+    )
 
 public class InteraccionSwaglab {
 
